@@ -1,0 +1,178 @@
+/*The Header & Nab Bar Flexbox*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+/*Stylizing Main Content*/
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+/*Stylizing the Footer*/
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #dadada;
+}
+
+/*Stylizing the article header*/
+.article-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 20px;
+}
+
+/*Stylizing the article content*/
+.article-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px;
+}
+
+.article-content h2 {
+    text-align: center;
+}
+
+/*Positioning the sidebar*/
+.main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.advertisement {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+/*Responsive Layout for the Photo Gallery*/
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.photo img {
+    width: 30%;
+    height: auto;
+}
+
+/*Adding a flexbox to Gallery Controls*/
+.gallery-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+/*Hamburger Menu Style*/
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+/*Hiding Hamburger Nav on Smaller screens*/
+@media (max-width: 768px) {
+.hamburger {
+    display: block;
+}
+
+nav ul {
+    flex-direction: column;
+    display: none;
+}
+
+nav ul.active {
+    display: flex;
+}
+}
+
+
+/* Styling for the carousel container */
+.carousel-container {
+    position: relative;
+    width: 80%;   /* Set width of the carousel */
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden; /* Hide the overflowing images */
+    border-radius: 10px; /* Optional rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional shadow */
+}
+
+/* Styling for the carousel images */
+.carousel img {
+    width: 100%;   /* Make each image fill the width of the carousel */
+    display: none; /* Hide all images initially */
+    transition: transform 0.5s ease-in-out; /* Smooth transition effect */
+}
+
+/* Show the first image initially */
+.carousel img:first-child {
+    display: block;
+}
+
+/* Navigation buttons */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+}
+
+/* Previous button on the left */
+.prev {
+    left: 10px;
+}
+
+/* Next button on the right */
+.next {
+    right: 10px;
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .carousel-container {
+        width: 100%; /* Take up full width on smaller screens */
+    }
+
+    button {
+        padding: 8px;
+    }
+}

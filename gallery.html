@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery of Birds</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <!--Header & Nav Bar-->
+     <header>
+        <h1>Bird Brain Outlet</h1>
+
+        <nav>
+            <!-- Hamburger Icon -->
+            <div class="hamburger">☰</div>
+    
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="article.html">Article</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="photo-gallery">
+       
+        <div class="carousel-container">
+            <div class="carousel">
+                
+                <img src="images/Types-of-Finches Chart.jpg" alt="Finch Chart">
+                <img src="images/owlfinch.jpg" alt="Owl">
+                <img src="images/strawberryfinch.jpg" alt="Strawberry">
+                <img src="images/shafttailfinch.jpg" alt="Shaft Tail">
+                <img src="images/starfinch.jpg" alt="Star">
+                <img src="images/society-finch.jpg" alt="Society">
+            </div>
+            
+            <!-- Navigation Buttons -->
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+            
+    </main>
+
+    <!--Functional Hamburger?-->
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+
+    <!--Functional Carousel?-->
+    <script src="script.js"></script>
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel img');
+
+        function showSlide(index) {
+            if (index >= images.length) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = images.length - 1;
+            } else {
+                currentIndex = index;
+            }
+            
+            images.forEach(image => image.style.display = 'none');
+            images[currentIndex].style.display = 'block';
+        }
+
+        function moveSlide(step) {
+            showSlide(currentIndex + step);
+        }
+
+        showSlide(currentIndex);
+    </script>
+    
+</body>
+</html>
